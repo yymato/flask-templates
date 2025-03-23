@@ -25,5 +25,15 @@ def list_prof(lst):
                    'штурман', 'пилот дронов']
     return render_template('list_of_professions.html', list=lst, list_prof=professions)
 
+@app.route('/answer')
+@app.route('/auto_answer')
+def answer():
+    data = {
+        'фамилия': '1',
+        'имя': '2'
+    } # Шаблон сделан через цикл, так что количество параметров может быть любым
+    return render_template('auto_answer.html', data=data.items())
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
