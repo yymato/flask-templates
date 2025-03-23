@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% if 'строитель' in param or 'инженер' in param %}
+    <img src="{{url_for('static', filename='img/it.png')}}" alt="error">
+{% else %}
+    <img src="{{url_for('static', filename='img/hc.png'}}">
+{% endif %}
+
+{% endblock %}
