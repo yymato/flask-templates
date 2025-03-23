@@ -2,8 +2,10 @@
 
 {% block content %}
 {% if 'строитель' in param or 'инженер' in param %}
+    <h5>Инженерные тренажеры</h5>
     <img src="{{url_for('static', filename='img/it.png')}}" alt="error">
 {% else %}
+    <h5>Научные симуляторы</h5>
     <img src="{{url_for('static', filename='img/hc.png'}}">
 {% endif %}
 
