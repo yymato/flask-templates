@@ -48,5 +48,26 @@ def login():
 def distribution():
     data = ['User1', 'User2', 'User3', 'User4']
     return render_template('cabin.html', data=data)
+
+@app.route('/table/<string:sex>/<int:age>')
+def table(sex, age):
+    if sex == 'male':
+        if age > 21:
+            color = '#0000FF'
+            picture = url_for('static', filename='img/man_picture.png')
+        else:
+            color = '#AFEEEE'
+            picture = url_for('static', filename='img/child_picture.png')
+    else:
+        if age > 21:
+            color = '#FF4500'
+            picture = url_for('static', filename='img/fem_picture.png')
+        else:
+            color = '#FF6347'
+            picture = url_for('static', filename='img/child_picture.png')
+
+    return render_template('picture_cabin.html', color=color, image=picture)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')

@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% block content %}
+<table>
+    <thead>
+    <tr>
+        <th>Цвет стен</th>
+        <th>Картинка</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th BGCOLOR="{{ color }}"></th>
+        <th>
+            <img src="{{ image }}">
+        </th>
+    </tr>
+
+    </tbody>
+</table>
+
+
+{% endblock %}
