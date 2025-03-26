@@ -3,9 +3,10 @@ import json
 from flask import Flask, url_for, render_template
 import flask
 
+from forms.login_form import LoginForm
 
 app = Flask(__name__)
-
+app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 @app.route('/<title>')
 @app.route('/index/<title>')
@@ -33,6 +34,15 @@ def answer():
         'имя': '2'
     } # Шаблон сделан через цикл, так что количество параметров может быть любым
     return render_template('auto_answer.html', data=data.items())
+
+@app.route('/login')
+def login():
+    form = LoginForm()
+
+    if form.validate_on_submit():
+        return '<h1>success</h1>'
+
+    return render_template('login.html', form=form)
 
 
 if __name__ == '__main__':
