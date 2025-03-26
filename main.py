@@ -44,6 +44,9 @@ def login():
 
     return render_template('login.html', form=form)
 
-
+@app.route('/distribution')
+def distribution():
+    data = ['User1', 'User2', 'User3', 'User4']
+    return render_template('cabin.html', data=data)
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
