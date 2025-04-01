@@ -35,12 +35,13 @@ def answer():
     } # Шаблон сделан через цикл, так что количество параметров может быть любым
     return render_template('auto_answer.html', data=data.items())
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
 
     if form.validate_on_submit():
-        return '<h1>success</h1>'
+        return f'''<link href="{ url_for('static', filename='css/style.css') }" rel="stylesheet">
+         <h1>success</h1>'''
 
     return render_template('login.html', form=form)
 
