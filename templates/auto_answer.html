@@ -1,9 +1,9 @@
 {% extends "index.html"%}
 
 {% block content %}
-
+<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 {% for i in data %}
-    <h4 align="center">{{i[0]}}: {{i[1]}}</h4>
+    <h4 align="left" ">{{i[0]}}: {{i[1]}}</h4>
 
 {% endfor %}
 

@@ -29,8 +29,15 @@ def list_prof(lst):
 @app.route('/auto_answer')
 def answer():
     data = {
-        'фамилия': '1',
-        'имя': '2'
+        'title': 'Название',
+        'surname': 'фамилия',
+        'name': 'Имя',
+        'education': 'Образование',
+        'profession': 'Специализация',
+        'sex': 'пол',
+        'motivation': 'Мотивация',
+        'ready': 'Готовность остаться на марсе',
+
     } # Шаблон сделан через цикл, так что количество параметров может быть любым
     return render_template('auto_answer.html', data=data.items())
 
