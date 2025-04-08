@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% set member = members|random %}
+    <h3>{{ member['name'] }}  {{ member['surname'] }}</h3>
+    <img src="{{member['img']}}" alt="error">
+    <h3>{{ member['specialisation']|sort|join(', ') }}</h3>
+
+{% endblock %}

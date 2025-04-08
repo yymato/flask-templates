@@ -68,6 +68,11 @@ def table(sex, age):
 
     return render_template('picture_cabin.html', color=color, image=picture)
 
+@app.route('/member')
+def get_memb():
+    with open('templates/data.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    return render_template('show_member.html', members=data)
 
 if __name__ == '__main__':
-    app.run(port=8080, host='127.0.0.1')
+    app.run()
